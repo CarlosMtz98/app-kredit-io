@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+1p:100,300,400,500,700,800,900');
+
+.kredit-home-bg{
+      z-index: -5;
+      background-size: cover;
+      min-height: 100vh;
+      width: 100%;  
+      background-color: #8A79F7;
+      background-blend-mode: multiply;
+      display: flex;
+      direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'M PLUS 1p', sans-serif;
+      
+}
+.kredit-header-ghost{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0px;
+      top: 0px;
+      background: linear-gradient(90deg, #8A79F7 0%, rgba(196, 196, 196, 0) 56.77%);
+      mix-blend-mode: multiply;
+}
+.kredit-home-jumbo{
+      max-width: 1080px;
+      color: white;
+      z-index: 5;
+      width: 100%;
+}
+.kredit-home-jumbo > h1{
+      font-weight: 900;
+      font-size: 72px;
+      letter-spacing: 1px;
+}
+.kredit-green{
+      color: #00C2A2;
+}

@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+1p:100,300,400,500,700,800,900');
+
+.kredit-navbar{
+      width: 100%;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      font-family: 'M PLUS 1p', sans-serif;
+}
+.kredit-nav{
+      min-height: 24vh;
+      max-width: 1280px;
+      position: relative;
+      z-index: 100;
+      top: 0;
+      left: 0;
+      width: 100%;
+}
+.kredit-brand{
+      font-weight: 900;
+      font-size: 32px;
+      padding: 30px;
+      color: white;
+}
+.kredit-brand:hover{
+      color: white;
+}
+.kredit-menu{
+      position: absolute;
+      right: 0;
+      
+}
+.kredit-menu-link{
+      color: white;
+      font-family: 'M PLUS 1p', sans-serif;
+      font-weight: 600;
+      letter-spacing: 2px; 
+      padding: 10px !important;
+}
+.kredit-link:hover{
+      text-decoration: none;
+}
+
+.kredit-menu-button{
+      color: #00C2A2;
+      padding-left: 15px !important;
+      padding-right: 15px !important;
+      border-width: 2px;
+      background: none;
+      border-radius: 5px;
+      border-color:  #00C2A2;
+      align-items: center;
+      font-weight: 500;
+      text-align: center;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.kredit-menu-button:hover{
+      box-shadow: 0px 0px 0px rgba(0,0,0,0);
+}
+.kredit-item{
+      padding-left: 6vh !important;
+      
+}
+.kredit-menu-link:hover{
+      color: white;
+      opacity: 0.6;
+}

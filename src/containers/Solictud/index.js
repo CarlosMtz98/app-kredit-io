@@ -5,8 +5,8 @@ class Solicitud extends React.Component {
     
     render() {
         return (
-            <div>
-                <RequestForm title="Nueva solicitud de Crédito"/>
+            <div className="">
+                <RequestForm title="Nueva solicitud de crédito"/>
             </div> 
         );
     }

@@ -1,10 +1,12 @@
 import React from 'react';
+import Home from './containers/Home/Home';
 
 class App extends React.Component {
 
     render() {
         return (
-            <h1>Hello Worldnpm</h1>
+
+            <Home></Home>
         );
     }
 }

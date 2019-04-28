@@ -1,0 +1,13 @@
+.kredit-result{
+      font-family: 'M PLUS 1p', sans-serif;
+      width: 100%;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      background: #00C2A2;
+}
+.kredit-verdict{
+      width: 100%;
+      position: relative;
+      height: 10vh;
+}

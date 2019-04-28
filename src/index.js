@@ -10,7 +10,7 @@ import NotFound from './containers/NotFound/index';
 const routing = (
 
     <Router>
-        <div>             
+        <div className="">             
             <Header/>
             <Switch>
                 <Route exact path="/" component={App}/>
