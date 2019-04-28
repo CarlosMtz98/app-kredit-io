@@ -6,6 +6,8 @@ import Header from './components/Header/Header'
 import Solicitud from './containers/Solictud/index';
 import Resultado from './containers/Resultado/Resultado'
 import NotFound from './containers/NotFound/index';
+import Login from './components/LogIn';
+import SignUp from './components/SignUp';
 
 const routing = (
 
@@ -16,6 +18,8 @@ const routing = (
                 <Route exact path="/" component={App}/>
                 <Route path="/solicitud" component={Solicitud}/>
                 <Route path="/resultado" component={Resultado}/>
+                <Route path="/log_in" component={Login}/>
+                <Route path="/sign_up" component={SignUp}/>
                 <Route component={NotFound} />
             </Switch>
         </div>
