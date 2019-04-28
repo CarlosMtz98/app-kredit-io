@@ -8,6 +8,8 @@ import Resultado from './containers/Resultado/Resultado'
 import NotFound from './containers/NotFound/index';
 import Login from './components/LogIn';
 import SignUp from './components/SignUp';
+import Services from './containers/Servicio/servicio';
+import Team from './containers/Servicio/equipo';
 
 const routing = (
 
@@ -19,6 +21,8 @@ const routing = (
                 <Route path="/solicitud" component={Solicitud}/>
                 <Route path="/resultado" component={Resultado}/>
                 <Route path="/log_in" component={Login}/>
+                <Route path="/servicios" component={Services}/>
+                <Route path="/equipo" component={Team}/>
                 <Route path="/sign_up" component={SignUp}/>
                 <Route component={NotFound} />
             </Switch>
