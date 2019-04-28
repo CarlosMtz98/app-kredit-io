@@ -4,6 +4,7 @@ import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import App from './App';
 import Header from './components/Header/Header'
 import Solicitud from './containers/Solictud/index';
+import Resultado from './containers/Resultado/Resultado'
 import NotFound from './containers/NotFound/index';
 
 const routing = (
@@ -14,6 +15,7 @@ const routing = (
             <Switch>
                 <Route exact path="/" component={App}/>
                 <Route path="/solicitud" component={Solicitud}/>
+                <Route path="/resultado" component={Resultado}/>
                 <Route component={NotFound} />
             </Switch>
         </div>
