@@ -12,13 +12,36 @@
       position: relative;
       max-width: 1280px;
       margin-top: 18vh;
-      
+      font-family: 'M PLUS 1p', sans-serif;
       top: 0;
       left: 0;
 }
-.kredict-title{
+.kredit-title{
       letter-spacing: 1px;
       font-weight: 900;
       font-size: 48px;
       color: white;
+}
+.kredit-req label{
+      color: white;
+      font-weight: 600;
+      letter-spacing: 1px;
+}
+.kredit-req input[type=text]{
+      height: 6vh;
+      
+}
+.kredit-req .input-group-text{
+      width: 5vh;
+      padding: 15px;
+}
+.kredit-req button{
+      background-color: #00C2A2;
+      border-color:  rgb(35, 211, 182);
+      box-shadow: none;
+}
+.kredit-req button:hover{
+      border-color:  rgb(35, 211, 182);
+      border: 2px solid rgb(35, 211, 182);;
+      background: transparent;
 }
