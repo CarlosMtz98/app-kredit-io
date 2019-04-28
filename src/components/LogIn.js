@@ -1,32 +1,43 @@
 import React, { Component } from "react";
 import { Button, Row, Col, FormGroup, FormControl, FormLabel, Container } from "react-bootstrap";
+import axios from 'axios';
 
 export class Login extends Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      email: "",
-      password: ""
-    };
-  }
+    constructor(props) {
+        super(props);
 
-  validateForm() {
-    if (this.state.email.length > 0 && this.state.password.length > 0)
-        this.handleLogin()
-    ;
-  }
+        this.state = {
+        email: "",
+        password: ""
+        };
+    }
 
-  handleChange = event => {
-    this.setState({
-      [event.target.id]: event.target.value
-    });
-  }
+    handleSubmit = event => {
+        event.preventDefault();
 
-  handleSubmit = event => {
-    event.preventDefault();
-  }
-  
+        const user = {
+            email: this.state.email,
+            password: this.state.password
+        }
+
+        console.log(user);
+
+        // axios.post(`http://18.217.95.55:3000/api/auth`, { user })
+        // .then(res => {
+        //     console.log(res);
+        //     console.log(res.data);
+        // })
+
+    }
+
+    handleChange = event => {
+        this.setState({
+        [event.target.id]: event.target.value
+        });
+    }
+
+
   render() {
     return (
       <div className="Login">
@@ -54,7 +65,6 @@ export class Login extends Component {
                     <Button
                         block
                         bsSize="large"
-                        disabled={this.validateForm()}
                         type="submit"
                     >
                         Iniciar Sesión
