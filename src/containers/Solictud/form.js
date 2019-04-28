@@ -46,6 +46,7 @@ export  class Form extends React.Component {
       <div className="SignUp kredit-form">
         
         <Container>
+        <div className="kredit-header-ghost"></div>
             <Row className="justify-content-md-center kredit-req">
                 <Col md={8}>
                     <form onSubmit={this.handleSubmit}>
@@ -57,6 +58,7 @@ export  class Form extends React.Component {
                             <FormControl
                             autoFocus
                             type="text"
+                            placeholder="ej. 85"
                             value={this.state.puntosSat}
                             onChange={this.handleChange}
                             />
@@ -68,6 +70,7 @@ export  class Form extends React.Component {
                             <FormControl
                             autoFocus
                             type="text"
+                            placeholder="ej. 73"
                             value={this.state.puntosBuro}
                             onChange={this.handleChange}
                             />
@@ -82,6 +85,7 @@ export  class Form extends React.Component {
                             <FormControl
                             autoFocus
                             type="text"
+                            placeholder="ej. 335,000"
                             value={this.state.montoCredito}
                             onChange={this.handleChange}
                             />
@@ -93,6 +97,7 @@ export  class Form extends React.Component {
                             <FormControl
                             autoFocus
                             type="text"
+                            placeholder="ej. 36"
                             value={this.state.plazo}
                             onChange={this.handleChange}
                             />
@@ -105,6 +110,7 @@ export  class Form extends React.Component {
                             <FormControl
                             value={this.state.salary}
                             onChange={this.handleChange}
+                            placeholder="ej. 35,000"
                             type="text"
                             />
                     </FormGroup>

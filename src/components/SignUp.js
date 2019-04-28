@@ -50,9 +50,10 @@ export default class SignUp extends Component {
 
   render() {
     return (
-      <div className="SignUp">
+      <div className="SignUp kredit-form">
         <Container>
-            <Row className="justify-content-md-center">
+        <div className="kredit-header-ghost"></div>
+            <Row className="justify-content-md-center kredit-req kredit-sign">
                 <Col md={6}>
                     <form onSubmit={this.handleSubmit}>
                     <Row>
@@ -62,6 +63,7 @@ export default class SignUp extends Component {
                             <FormControl
                             autoFocus
                             type="text"
+                            placeholder="ej. Dohn"
                             value={this.state.name}
                             onChange={this.handleChange}
                             />
@@ -73,6 +75,7 @@ export default class SignUp extends Component {
                             <FormControl
                             autoFocus
                             type="text"
+                            placeholder="ej. Joe"
                             value={this.state.lastName}
                             onChange={this.handleChange}
                             />
@@ -84,7 +87,7 @@ export default class SignUp extends Component {
                         <FormControl
                             autoFocus
                             type="text"
-                            placeholder="eg. 19-04-1994"
+                            placeholder="ej. 19-04-1994"
                             value={this.state.birthDate}
                             onChange={this.handleChange}
                             />
@@ -95,6 +98,7 @@ export default class SignUp extends Component {
                             <FormControl
                             autoFocus
                             type="text"
+                            placeholder="ej. DOJO0849HFDSR3"
                             value={this.state.rfc}
                             onChange={this.handleChange}
                             />
@@ -106,6 +110,7 @@ export default class SignUp extends Component {
                             <FormControl
                             autoFocus
                             type="text"
+                            placeholder="ej. 09182"
                             value={this.state.postalCode}
                             onChange={this.handleChange}
                             />
@@ -117,6 +122,7 @@ export default class SignUp extends Component {
                             <FormControl
                             autoFocus
                             type="text"
+                            placeholder="ej. (55) 6792 8123"
                             value={this.state.phone}
                             onChange={this.handleChange}
                             />
@@ -128,6 +134,7 @@ export default class SignUp extends Component {
                             <FormControl
                             autoFocus
                             type="email"
+                            placeholder="ej. aws-sucks@konfio.mx"
                             value={this.state.email}
                             onChange={this.handleChange}
                             />
@@ -138,14 +145,16 @@ export default class SignUp extends Component {
                             value={this.state.password}
                             onChange={this.handleChange}
                             type="password"
+                            placeholder="**************"
                             />
                     </FormGroup>
                     <FormGroup controlId="confrimPassword" bsSize="large">
-                        <FormLabel>Confirm Passwodr</FormLabel>
+                        <FormLabel>Confirm Password</FormLabel>
                         <FormControl
                         value={this.state.confrimPassword}
                         onChange={this.handleChange}
                         type="password"
+                        placeholder="**************"
                         />
                     </FormGroup>
                     <Button

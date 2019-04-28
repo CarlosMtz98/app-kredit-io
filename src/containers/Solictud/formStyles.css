@@ -6,10 +6,15 @@
       display: flex;
       justify-content: center;
       background: #8A79F7;
-      padding-bottom: 10vh;
+      min-height: 100vh;
 }
 .kredit-req{
+      padding-top: 10vh;
       width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       position: relative;
       max-width: 1280px;
       margin-top: 18vh;
@@ -19,9 +24,10 @@
 }
 .kredit-title{
       letter-spacing: 1px;
-      font-weight: 900;
-      font-size: 32px;
+      font-weight: 700;
+      font-size: 24px;
       color: white;
+      margin-bottom: 5vh;
 }
 .kredit-req label{
       color: white;
@@ -47,4 +53,14 @@
       border-color:  rgb(35, 211, 182);
       border: 2px solid rgb(35, 211, 182);;
       background: transparent;
+}
+.kredit-login{
+      display: flex;
+      align-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding-bottom: 50vh;
+}
+.kredit-sign{
+      margin-bottom: 10vh;
 }
