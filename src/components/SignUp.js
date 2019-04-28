@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Button, Row, Col, FormGroup, FormControl, FormLabel, Container } from "react-bootstrap";
-import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 
@@ -13,7 +12,7 @@ export default class SignUp extends Component {
         lastName: "",
         email: "",
         password: "",
-        birthDate: new Date(),
+        birthDate: "",
         phone: "",
         postalCode: "",
         rfc: "",
@@ -21,19 +20,33 @@ export default class SignUp extends Component {
     };
   }
 
-  validateForm() {
-    return this.state.email.length > 0 && this.state.password.length > 0;
-  }
+    handleSubmit =  event => {
+        event.preventDefault();
 
-  handleChange = event => {
-    this.setState({
-      [event.target.id]: event.target.value
-    });
-  }
+        const newUser = {
+            name: this.state.name,
+            lastname: this.state.lastName,
+            email: this.state.email,
+            password: this.state.password,
+            phone: this.state.phone,
+            zipcode: this.state.postalCode,
+            birthdate: this.state.birthDate,
+            monthlyIncome: this.state.rfc
 
-  handleSubmit = event => {
-    event.preventDefault();
-  }
+        }
+
+        console.log(newUser);
+
+        // const res = await axios.post(`http://18.217.95.55:3000/api/auth`, { user });
+        // console.log(res);
+        // console.log(res.data);
+    }
+
+    handleChange = event => {
+        this.setState({
+        [event.target.id]: event.target.value
+        });
+    }
 
   render() {
     return (
@@ -68,10 +81,13 @@ export default class SignUp extends Component {
                     </Row>
                     <FormGroup controlId="birthDate" bsSize="large">
                         <FormLabel>Fecha de Nacimiento</FormLabel>
-                        <DatePicker
-                            selected={this.state.birthDate}
+                        <FormControl
+                            autoFocus
+                            type="text"
+                            placeholder="eg. 19-04-1994"
+                            value={this.state.birthDate}
                             onChange={this.handleChange}
-                        />
+                            />
                     </FormGroup>                 
                     
                     <FormGroup controlId="rfc" bsSize="large">
@@ -125,7 +141,7 @@ export default class SignUp extends Component {
                             />
                     </FormGroup>
                     <FormGroup controlId="confrimPassword" bsSize="large">
-                        <FormLabel>Confirm Passwor</FormLabel>
+                        <FormLabel>Confirm Passwodr</FormLabel>
                         <FormControl
                         value={this.state.confrimPassword}
                         onChange={this.handleChange}
@@ -135,7 +151,6 @@ export default class SignUp extends Component {
                     <Button
                         block
                         bsSize="large"
-                        disabled={!this.validateForm()}
                         type="submit"
                     >
                        Registrar
