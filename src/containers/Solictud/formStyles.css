@@ -34,8 +34,8 @@
       font-weight: 600;
       letter-spacing: 1px;
 }
-.kredit-req input[type=text]{
-      height: 6vh;
+.kredit-req input[type=text], input[type=email], input[type=password] {
+      height: 60px
       
 }
 .kredit-req .input-group-text{
@@ -47,7 +47,7 @@
       border-color:  rgb(35, 211, 182);
       box-shadow: none;
       padding: 15px;
-      height: 6vh;
+      height: 60px;
 }
 .kredit-req button:hover{
       border-color:  rgb(35, 211, 182);

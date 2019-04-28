@@ -42,7 +42,7 @@
 }
 
 .kredit-menu-button{
-      color: #00C2A2;
+      color: white;
       padding-left: 15px !important;
       padding-right: 15px !important;
       border-width: 2px;
@@ -60,7 +60,7 @@
       box-shadow: 0px 0px 0px rgba(0,0,0,0);
 }
 .kredit-item{
-      padding-left: 6vh !important;
+      padding-left: 4vh !important;
       
 }
 .kredit-menu-link:hover{

@@ -5,7 +5,16 @@
       display: flex;
       justify-content: center;
       background: #00C2A2;
+      
 }
+
+.kredit-result .kredit-home-jumbo > h1{
+      font-weight: 900;
+      font-size: 60px;
+      letter-spacing: 1px;
+      height: 100vh;
+}
+
 .kredit-verdict{
       width: 100%;
       position: relative;
