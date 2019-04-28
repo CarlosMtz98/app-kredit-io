@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Button, Row, Col, FormGroup, FormControl, FormLabel, Container } from "react-bootstrap";
 import axios from 'axios';
+import {Route, Redirect} from 'react-router-dom';
 import cors from 'cors';
 
 export class Login extends Component {
@@ -9,8 +10,8 @@ export class Login extends Component {
         super(props);
 
         this.state = {
-        email: "",
-        password: ""
+            email: "",
+            password: ""
         };
     }
 
@@ -22,11 +23,16 @@ export class Login extends Component {
             password: this.state.password
         }
 
-        console.log(JSON.stringify( user ));
+        const res = await axios.post(`http://18.217.95.55:3000/api/auth`, ( user ));
+        const token = res.data
 
-        const res = await axios.post(`http://18.217.95.55:3000/api/auth`, JSON.stringify( user ));
-        console.log(res);
-        console.log(res.data);
+        if (token) {
+            this.props.history.push('/solicitud');
+            axios.defaults.headers.common['x-auth-token'] = res.data
+        }
+        
+
+        console.log(res.data,axios.headers);
     }
 
     handleChange = event => {

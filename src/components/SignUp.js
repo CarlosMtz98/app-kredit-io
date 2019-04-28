@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import { Button, Row, Col, FormGroup, FormControl, FormLabel, Container } from "react-bootstrap";
+import { Button, FormCheck, Row, Col, FormGroup, FormControl, FormLabel, Container } from "react-bootstrap";
+import axios from 'axios';
+import {Redirect} from 'react-router-dom';
 import 'react-datepicker/dist/react-datepicker.css';
 
 
@@ -20,7 +22,7 @@ export default class SignUp extends Component {
     };
   }
 
-    handleSubmit =  event => {
+    handleSubmit =  async event => {
         event.preventDefault();
 
         const newUser = {
@@ -35,11 +37,14 @@ export default class SignUp extends Component {
 
         }
 
-        console.log(newUser);
+        const res = await axios.post(`http://18.217.95.55:3000/api/users`, ( newUser ));
 
-        // const res = await axios.post(`http://18.217.95.55:3000/api/auth`, { user });
-        // console.log(res);
-        // console.log(res.data);
+        const token = res.data
+        if (token) {
+            this.props.history.push('/solicitud');
+            axios.defaults.headers.common['x-auth-token'] = res.data
+        }
+
     }
 
     handleChange = event => {
@@ -58,7 +63,7 @@ export default class SignUp extends Component {
                     <form onSubmit={this.handleSubmit}>
                     <Row>
                         <Col>
-                        <FormGroup controlId="name" bsSize="large">
+                        <FormGroup controlId="name">
                             <FormLabel>Nombre(s)</FormLabel>
                             <FormControl
                             autoFocus
@@ -70,7 +75,7 @@ export default class SignUp extends Component {
                         </FormGroup>
                         </Col>
                         <Col>
-                        <FormGroup controlId="lastName" bsSize="large">
+                        <FormGroup controlId="lastName">
                             <FormLabel>Apellidos</FormLabel>
                             <FormControl
                             autoFocus
@@ -82,7 +87,7 @@ export default class SignUp extends Component {
                         </FormGroup>
                         </Col>
                     </Row>
-                    <FormGroup controlId="birthDate" bsSize="large">
+                    <FormGroup controlId="birthDate">
                         <FormLabel>Fecha de Nacimiento</FormLabel>
                         <FormControl
                             autoFocus
@@ -93,7 +98,7 @@ export default class SignUp extends Component {
                             />
                     </FormGroup>                 
                     
-                    <FormGroup controlId="rfc" bsSize="large">
+                    <FormGroup controlId="rfc">
                             <FormLabel>RFC</FormLabel>
                             <FormControl
                             autoFocus
@@ -105,7 +110,7 @@ export default class SignUp extends Component {
                         </FormGroup>
                         <Row>
                         <Col>
-                        <FormGroup controlId="postalCode" bsSize="large">
+                        <FormGroup controlId="postalCode">
                             <FormLabel>Código Postal</FormLabel>
                             <FormControl
                             autoFocus
@@ -117,7 +122,7 @@ export default class SignUp extends Component {
                         </FormGroup>
                         </Col>
                         <Col>
-                        <FormGroup controlId="phone" bsSize="large">
+                        <FormGroup controlId="phone">
                             <FormLabel>Celular</FormLabel>
                             <FormControl
                             autoFocus
@@ -129,7 +134,7 @@ export default class SignUp extends Component {
                         </FormGroup>
                         </Col>
                     </Row>
-                    <FormGroup controlId="email" bsSize="large">
+                    <FormGroup controlId="email">
                             <FormLabel>Email</FormLabel>
                             <FormControl
                             autoFocus
@@ -139,7 +144,7 @@ export default class SignUp extends Component {
                             onChange={this.handleChange}
                             />
                         </FormGroup>
-                    <FormGroup controlId="password" bsSize="large">
+                    <FormGroup controlId="password">
                             <FormLabel>Password</FormLabel>
                             <FormControl
                             value={this.state.password}
@@ -148,7 +153,7 @@ export default class SignUp extends Component {
                             placeholder="**************"
                             />
                     </FormGroup>
-                    <FormGroup controlId="confrimPassword" bsSize="large">
+                    <FormGroup controlId="confrimPassword">
                         <FormLabel>Confirm Password</FormLabel>
                         <FormControl
                         value={this.state.confrimPassword}
@@ -157,9 +162,12 @@ export default class SignUp extends Component {
                         placeholder="**************"
                         />
                     </FormGroup>
+                    <FormGroup controlId="formBasicChecbox">
+                        <FormCheck type="checkbox" label="Acepto términos y condiciones" />
+                    </FormGroup>
                     <Button
                         block
-                        bsSize="large"
+                    
                         type="submit"
                     >
                        Registrar

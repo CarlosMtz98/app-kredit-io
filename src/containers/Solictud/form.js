@@ -1,6 +1,7 @@
 import React from "react";
 import './formStyles.css';
 import { Button, Row, Col, FormGroup, FormControl, FormLabel, Container } from "react-bootstrap";
+import axios from 'axios';
 
 export  class Form extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ export  class Form extends React.Component {
     };
   }
 
-    handleSubmit =  event => {
+    handleSubmit =  async event => {
         event.preventDefault();
 
         const application = {
@@ -24,15 +25,16 @@ export  class Form extends React.Component {
             BURO: this.state.puntosBuro,
             dateOfCreation: this.state.dateRequest,
             monthlyIncome: this.state.salary,
-            monthsPay: this.state.plazo,
+            monthsToPay: this.state.plazo,
             quantity: this.state.montoCredito
         }
 
-        console.log(application);
+        console.log(JSON.stringify( application ));
 
-        // const res = await axios.post(`http://18.217.95.55:3000/api/auth`, { user });
-        // console.log(res);
-        // console.log(res.data);
+        const res = await axios.post('http://18.217.95.55:3000/api/applications', ( application ));
+        const resultId = res.data.result
+        console.log(resultId);
+
     }
 
     handleChange = event => {
@@ -42,7 +44,9 @@ export  class Form extends React.Component {
     }
 
   render() {
+
     return (
+        
       <div className="SignUp kredit-form">
         
         <Container>
