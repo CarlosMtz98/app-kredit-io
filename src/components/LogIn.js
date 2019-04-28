@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Button, Row, Col, FormGroup, FormControl, FormLabel, Container } from "react-bootstrap";
 import axios from 'axios';
+import cors from 'cors';
 
 export class Login extends Component {
 
@@ -13,7 +14,7 @@ export class Login extends Component {
         };
     }
 
-    handleSubmit = event => {
+    handleSubmit = async event => {
         event.preventDefault();
 
         const user = {
@@ -21,14 +22,11 @@ export class Login extends Component {
             password: this.state.password
         }
 
-        console.log(user);
+        console.log(JSON.stringify( user ));
 
-        // axios.post(`http://18.217.95.55:3000/api/auth`, { user })
-        // .then(res => {
-        //     console.log(res);
-        //     console.log(res.data);
-        // })
-
+        const res = await axios.post(`http://18.217.95.55:3000/api/auth`, JSON.stringify( user ));
+        console.log(res);
+        console.log(res.data);
     }
 
     handleChange = event => {
@@ -45,7 +43,7 @@ export class Login extends Component {
             <Row className="justify-content-md-center">
                 <Col md={6}>
                     <form onSubmit={this.handleSubmit}>
-                    <FormGroup controlId="email" bsSize="large">
+                    <FormGroup controlId="email">
                         <FormLabel>Email</FormLabel>
                         <FormControl
                         autoFocus
@@ -54,7 +52,7 @@ export class Login extends Component {
                         onChange={this.handleChange}
                         />
                     </FormGroup>
-                    <FormGroup controlId="password" bsSize="large">
+                    <FormGroup controlId="password">
                         <FormLabel>Password</FormLabel>
                         <FormControl
                         value={this.state.password}
@@ -64,7 +62,7 @@ export class Login extends Component {
                     </FormGroup>
                     <Button
                         block
-                        bsSize="large"
+                    
                         type="submit"
                     >
                         Iniciar Sesión
