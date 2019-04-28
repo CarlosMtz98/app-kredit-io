@@ -40,16 +40,18 @@ export class Login extends Component {
 
   render() {
     return (
-      <div className="Login">
+      <div className="Login kredit-form">
         <Container>
-            <Row className="justify-content-md-center">
-                <Col md={6}>
+        <div className="kredit-header-ghost"></div>
+            <Row className="justify-content-md-center kredit-req kredit-login">
+                <Col md={4}>
                     <form onSubmit={this.handleSubmit}>
                     <FormGroup controlId="email" bsSize="large">
                         <FormLabel>Email</FormLabel>
                         <FormControl
                         autoFocus
                         type="email"
+                        placeholder="ej. aws-sucks@konfio.mx"
                         value={this.state.email}
                         onChange={this.handleChange}
                         />
@@ -59,6 +61,7 @@ export class Login extends Component {
                         <FormControl
                         value={this.state.password}
                         onChange={this.handleChange}
+                        placeholder="**************"
                         type="password"
                         />
                     </FormGroup>
