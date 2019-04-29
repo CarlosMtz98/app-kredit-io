@@ -2,7 +2,6 @@ import React, {Component} from "react";
 import './formStyles.css';
 import { Button, Row, Col, FormGroup, FormControl, FormLabel, Container } from "react-bootstrap";
 import axios from 'axios';
-import globalToken from './global';
 
 class Solicitud extends React.Component {
     constructor(props) {
@@ -34,8 +33,7 @@ class Solicitud extends React.Component {
             const token = res.data
     
             if (token) {
-                this.props.history.push('/resultado');
-                globalToken.token = token;
+                this.props.history.push(`/resultado/:${JSON.stringify(token)}`);
             }
             
             
